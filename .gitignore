@@ -1,0 +1,38 @@
+# Secrets and local-only state
+.env
+.env.local
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+
+# Runtime state (never committed)
+state/
+logs/
+backups/
+
+# SQLite databases (INTENTIONALLY EXCLUDED)
+# Why: Claude Code and other tools store session embeddings, conversation history,
+# and indexed knowledge in *.db files. These are:
+#   - Machine-specific (rebuilding is faster than porting)
+#   - May contain secrets from indexed conversations
+#   - Can expose private message history
+#
+# To preserve sessions on a fresh machine (OPTIONAL):
+#   1. Manual backup: cp -r ~/.claude/context-mode/content/ /safe/backup/
+#   2. After restore, restore manually: cp -r /safe/backup/ ~/.claude/context-mode/content/
+#   3. Or let Claude Code rebuild from scratch (recommended for security)
+*.db
+*.db-shm
+*.db-wal
+
+# Claude plugins — managed cache, not hand-authored
+ai/claude/public/plugins/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp

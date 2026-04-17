@@ -1,0 +1,10 @@
+[Unit]
+Description=Dotfiles periodic sync timer
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+Unit=dotfiles-sync.service
+
+[Install]
+WantedBy=timers.target

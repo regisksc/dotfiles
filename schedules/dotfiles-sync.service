@@ -1,0 +1,7 @@
+[Unit]
+Description=Dotfiles periodic sync
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Git/dotfiles
+ExecStart=%h/Git/dotfiles/install.sh sync
