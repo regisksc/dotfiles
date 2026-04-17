@@ -1,0 +1,226 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
+
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
+alias vg='very_good'
+alias vgp='very_good packages get'
+alias vgt='very_good test --coverage --min-coverage'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/regiskian/.dart-cli-completion/zsh-config.zsh ]] && . /Users/regiskian/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
+export PATH="$JAVA_HOME/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+
+# FVM
+export PATH="/Users/regiskian/.fvm_flutter/bin:$PATH"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Added by Antigravity
+export PATH="/Users/regiskian/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# direnv - auto-load .envrc files
+eval "$(direnv hook zsh)"
+
+export IAP_APPLE_KEY_ID="${IAP_APPLE_KEY_ID}"
+export IAP_APPLE_ISSUER_ID="${IAP_APPLE_ISSUER_ID}"
+export IAP_APPLE_PRIVATE_KEY_PATH="/Users/regiskian/Git/work/AuthKey_9A5RULCMA2.p8"
+# bun completions
+[ -s "/Users/regiskian/.bun/_bun" ] && source "/Users/regiskian/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# ==========================================
+# AI Model Selection (env-based, no ~/.claude dependency)
+# ==========================================
+use-claude() {
+  local quiet=${1:-}
+  unset ANTHROPIC_AUTH_TOKEN
+  unset ANTHROPIC_API_KEY
+  unset ANTHROPIC_BASE_URL
+  unset ANTHROPIC_MODEL
+  unset ANTHROPIC_DEFAULT_OPUS_MODEL
+  unset ANTHROPIC_DEFAULT_SONNET_MODEL
+  unset ANTHROPIC_DEFAULT_HAIKU_MODEL
+  if [[ "$quiet" != "--quiet" ]]; then
+    echo "✓ Switched to Claude subscription (Anthropic direct)"
+    echo "  Use: claude --model opus/sonnet/haiku"
+  fi
+}
+
+use-alibaba() {
+  local model=${1:-qwen3.6-plus}
+  export ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY}"
+  unset ANTHROPIC_AUTH_TOKEN
+  export ANTHROPIC_BASE_URL="https://coding-intl.dashscope.aliyuncs.com/apps/anthropic"
+  export ANTHROPIC_MODEL="$model"
+  echo "✓ Switched to Alibaba Coding Plan → $model"
+  echo "  Pro plan: 90K requests/month"
+  echo "  Other models: use-alibaba qwen3.6-plus, use-alibaba qwen3.5-plus, use-alibaba glm-5, use-alibaba kimi-2.5"
+}
+
+ai-status() {
+  if [[ -n "$ANTHROPIC_BASE_URL" ]]; then
+    echo "Current backend: Alibaba Coding Plan (Pro)"
+    echo "  Default model: $ANTHROPIC_MODEL"
+  else
+    echo "Current backend: Claude subscription (Anthropic direct)"
+    echo "  Models: opus, sonnet, haiku"
+  fi
+}
+
+# Default to Claude subscription on new shell
+use-claude --quiet
+
+# ==========================================
+# Goose AI Agent - DashScope Configuration
+# ==========================================
+export OPENAI_HOST="https://coding-intl.dashscope.aliyuncs.com"
+export OPENAI_API_KEY="${OPENAI_API_KEY}"
+
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/regiskian/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# Qwen Code - Claude Code style customization
+alias qwen='qwen'  # Keep qwen command
+
+# Add a custom prompt prefix for qwen sessions
+function qwen-cc() {
+    echo -e "\033[38;2;91;166;255m╭────────────────────────────────────────────╮\033[0m"
+    echo -e "\033[38;2;91;166;255m│\033[0m  \033[1;38;2;91;166;255mQwen Code\033[0m  \033[38;2;106;127;147m(Claude Code style)\033[0m"
+    echo -e "\033[38;2;91;166;255m╰────────────────────────────────────────────╯\033[0m"
+    qwen "$@"
+}
+
+# Set terminal to dark mode colors (for compatible terminals)
+export CLICOLOR=1
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+alias claude-mem='bun "/Users/regiskian/.claude/plugins/marketplaces/thedotmack/plugin/scripts/worker-service.cjs"'
+
+# Volo Backend Alias
+alias volo-backend="/Users/regiskian/Git/sideprojects/volo/backend/volo-start.sh"
+# openclaude2 now in ~/.local/bin (removed hardcoded alias)
+
+# Ollama tunnel to Windows PC
+export OLLAMA_HOST=http://localhost:11434
