@@ -1,0 +1,32 @@
+{
+  "name": "dashscope",
+  "engine": "openai",
+  "display_name": "Alibaba DashScope",
+  "description": "Qwen, Kimi, GLM, MiniMax models via Alibaba DashScope",
+  "api_key_env": "DASHSCOPE_API_KEY",
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+  "models": [
+    {
+      "name": "qwen3-coder-plus",
+      "context_limit": 262144
+    },
+    {
+      "name": "qwen3.5-plus",
+      "context_limit": 1000000
+    },
+    {
+      "name": "kimi-k2.5",
+      "context_limit": 202752
+    },
+    {
+      "name": "glm-5",
+      "context_limit": 202752
+    },
+    {
+      "name": "minimax-m2.5",
+      "context_limit": 196608
+    }
+  ],
+  "supports_streaming": true,
+  "requires_auth": true
+}

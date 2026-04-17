@@ -1,0 +1,19 @@
+---
+description: "Flutter/Dart rules — debugPrint, const correctness, line length, no editing generated files, AAA tests, conventional commits"
+globs: ["**/*.dart"]
+alwaysApply: false
+---
+# Flutter & Dart
+
+```toon
+rules[9]{id,rule}:
+1	Use debugPrint not print
+2	No hardcoded business rules/mock data; prefer dynamic/API-based solutions
+3	Prefer const constructors, list literals, map literals
+4	Line length 120 (unless project overrides to 80)
+5	Use package: imports, never relative for lib files
+6	Never edit generated files (*.g.dart *.freezed.dart *.mocks.dart GeneratedPluginRegistrant.*)
+7	Comment only non-obvious side effects or hidden logic; no comments on barrel/export files
+8	Tests follow AAA (Arrange-Act-Assert)
+9	Monorepo commits: Conventional Commits type(package_name): desc; scope=nearest pubspec.yaml; max 80 chars; imperative mood; no bullets; prefer small commits
+```

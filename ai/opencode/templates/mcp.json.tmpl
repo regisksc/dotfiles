@@ -1,0 +1,56 @@
+{
+  "mcpServers": {
+    "context-mode": {
+      "command": "context-mode"
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ]
+    },
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": ""
+      }
+    },
+    "figma": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@tmegit/figma-developer-mcp",
+        "--stdio"
+      ],
+      "env": {
+        "FIGMA_API_KEY": ""
+      }
+    },
+    "shadcn-ui": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "shadcn-mcp"
+      ]
+    },
+    "mempalace": {
+      "command": "/Users/regiskian/.agent-stack/mempalace-venv/bin/python",
+      "args": [
+        "-m",
+        "mempalace.mcp_server"
+      ]
+    },
+    "openspace": {
+      "command": "/Users/regiskian/.agent-stack/venv/bin/openspace-mcp",
+      "env": {
+        "OPENSPACE_HOST_SKILL_DIRS": "/Users/regiskian/.claude/skills",
+        "OPENSPACE_WORKSPACE": "/Users/regiskian/.agent-stack/src/OpenSpace"
+      }
+    }
+  }
+}

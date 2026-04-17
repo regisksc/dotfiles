@@ -1,0 +1,168 @@
+{
+  "model": "openai/qwen3.5-plus",
+  "small_model": "openai/kimi-k2.5",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "gemma4:26b": {
+          "name": "gemma4:26b"
+        },
+        "gpt-oss:20b": {
+          "name": "gpt-oss:20b"
+        }
+      }
+    }
+  },
+  "mcp": {
+    "context-mode": {
+      "type": "local",
+      "command": [
+        "context-mode"
+      ]
+    },
+    "context7": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp"
+      ]
+    },
+    "supabase": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@supabase/mcp-server-supabase"
+      ]
+    },
+    "figma": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@tmegit/figma-developer-mcp",
+        "--stdio"
+      ]
+    },
+    "shadcn-ui": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "shadcn-mcp"
+      ]
+    },
+    "mempalace": {
+      "type": "local",
+      "command": [
+        "/Users/regiskian/.agent-stack/mempalace-venv/bin/python",
+        "-m",
+        "mempalace.mcp_server"
+      ]
+    },
+    "openspace": {
+      "type": "local",
+      "command": [
+        "env",
+        "OPENSPACE_HOST_SKILL_DIRS=/Users/regiskian/.claude/skills",
+        "OPENSPACE_WORKSPACE=/Users/regiskian/.agent-stack/src/OpenSpace",
+        "/Users/regiskian/.agent-stack/venv/bin/openspace-mcp"
+      ]
+    }
+  },
+  "permission": {
+    "bash": {
+      "*": "allow",
+      "mkdir *": "allow",
+      "mkdir": "allow",
+      "cd *": "allow",
+      "mv *": "allow",
+      "cp *": "allow",
+      "touch *": "allow",
+      "chmod *": "allow",
+      "echo *": "allow",
+      "printf *": "allow",
+      "pwd": "allow",
+      "ls *": "allow",
+      "ls": "allow",
+      "which *": "allow",
+      "awk *": "allow",
+      "sed *": "allow",
+      "wc *": "allow",
+      "sort *": "allow",
+      "uniq *": "allow",
+      "cut *": "allow",
+      "tr *": "allow",
+      "date": "allow",
+      "whoami": "allow",
+      "uname *": "allow",
+      "git *": "allow",
+      "npm *": "allow",
+      "yarn *": "allow",
+      "pnpm *": "allow",
+      "bun *": "allow",
+      "cargo *": "allow",
+      "make *": "allow",
+      "flutter *": "allow",
+      "flutter": "allow",
+      "dart *": "allow",
+      "dart": "allow",
+      "fvm *": "allow",
+      "fvm": "allow",
+      "pod *": "allow",
+      "xcodebuild *": "allow",
+      "xcrun *": "allow",
+      "open *": "allow",
+      "*mcp*": "allow",
+      "opencode *": "allow"
+    },
+    "read": {
+      "*": "allow"
+    },
+    "write": {
+      "*": "allow"
+    },
+    "external_directory": {
+      "*": "allow"
+    },
+    "skill": "allow"
+  },
+  "plugin": [
+    "context-mode",
+    "/Users/regiskian/.config/opencode/plugins/notifications.js",
+    "/Users/regiskian/.config/opencode/plugins/prompt-refiner.js",
+    "/Users/regiskian/.config/opencode/plugins/humanizer.js",
+    "/Users/regiskian/.config/opencode/plugins/research.js",
+    "/Users/regiskian/.config/opencode/plugins/deep-research.js",
+    "/Users/regiskian/.config/opencode/plugins/session-titles.js",
+    "/Users/regiskian/.config/opencode/plugins/skill-refresh.js",
+    "/Users/regiskian/.config/opencode/hooks/caveman-auto.js"
+  ],
+  "skills": {
+    "paths": [
+      "/Users/regiskian/.claude/skills",
+      "/Users/regiskian/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills",
+      "/Users/regiskian/.config/opencode/skills"
+    ],
+    "refresh_on_load": true
+  },
+  "experimental": {
+    "chat": {
+      "messages": {
+        "transform": [
+          {
+            "type": "command",
+            "command": "node ~/.config/opencode/plugins/skill-bootstrap.js"
+          }
+        ]
+      }
+    }
+  },
+  "$schema": "https://opencode.ai/config.json"
+}

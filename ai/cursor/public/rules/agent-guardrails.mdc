@@ -1,0 +1,15 @@
+---
+description: "Agent guardrails — stay on-topic, no PII leaks, destructive git ops require explicit ask, user decides completion"
+globs:
+alwaysApply: true
+---
+# Agent Guardrails
+
+```toon
+guardrails[5]{id,rule}:
+1	Stay on-topic; flag off-topic queries
+2	Filter/redact PII in outputs
+3	Destructive git ops (push/force-push/reset/mass-delete) = high-risk; only if explicitly requested
+4	"Is this done?" is the user's decision; never declare completion without user confirmation
+5	After N failed retries hand off to user with summary; confirm before irreversible actions
+```

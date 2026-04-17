@@ -1,0 +1,275 @@
+{
+  "security": {
+    "auth": {
+      "selectedType": "openai"
+    }
+  },
+  "ui": {
+    "theme": "ANSI"
+  },
+  "$version": 3,
+  "env": {
+    "BAILIAN_CODING_PLAN_API_KEY": "${ALIBABA_API_KEY}"
+  },
+  "modelProviders": {
+    "openai": [
+      {
+        "id": "qwen3.6-plus",
+        "name": "[ModelStudio Coding Plan for Global/Intl] qwen3.6-plus",
+        "baseUrl": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "envKey": "${QWEN_ENVKEY}",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 1000000
+        }
+      },
+      {
+        "id": "qwen3.5-plus",
+        "name": "[ModelStudio Coding Plan for Global/Intl] qwen3.5-plus",
+        "baseUrl": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "envKey": "${QWEN_ENVKEY}",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 1000000
+        }
+      },
+      {
+        "id": "qwen3-coder-plus",
+        "name": "[ModelStudio Coding Plan for Global/Intl] qwen3-coder-plus",
+        "baseUrl": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "envKey": "${QWEN_ENVKEY}",
+        "generationConfig": {
+          "contextWindowSize": 1000000
+        }
+      },
+      {
+        "id": "qwen3-coder-next",
+        "name": "[ModelStudio Coding Plan for Global/Intl] qwen3-coder-next",
+        "baseUrl": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "envKey": "${QWEN_ENVKEY}",
+        "generationConfig": {
+          "contextWindowSize": 262144
+        }
+      },
+      {
+        "id": "qwen3-max-2026-01-23",
+        "name": "[ModelStudio Coding Plan for Global/Intl] qwen3-max-2026-01-23",
+        "baseUrl": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "envKey": "${QWEN_ENVKEY}",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 262144
+        }
+      },
+      {
+        "id": "glm-4.7",
+        "name": "[ModelStudio Coding Plan for Global/Intl] glm-4.7",
+        "baseUrl": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "envKey": "${QWEN_ENVKEY}",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 202752
+        }
+      },
+      {
+        "id": "glm-5",
+        "name": "[ModelStudio Coding Plan for Global/Intl] glm-5",
+        "baseUrl": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "envKey": "${QWEN_ENVKEY}",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 202752
+        }
+      },
+      {
+        "id": "MiniMax-M2.5",
+        "name": "[ModelStudio Coding Plan for Global/Intl] MiniMax-M2.5",
+        "baseUrl": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "envKey": "${QWEN_ENVKEY}",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 196608
+        }
+      },
+      {
+        "id": "kimi-k2.5",
+        "name": "[ModelStudio Coding Plan for Global/Intl] kimi-k2.5",
+        "baseUrl": "https://coding-intl.dashscope.aliyuncs.com/v1",
+        "envKey": "${QWEN_ENVKEY}",
+        "generationConfig": {
+          "extra_body": {
+            "enable_thinking": true
+          },
+          "contextWindowSize": 262144
+        }
+      }
+    ]
+  },
+  "codingPlan": {
+    "region": "global",
+    "version": "1392f396e6ec0d8223fec14681e00f79e048c4879e3b11ef966a00636a233ac6"
+  },
+  "model": {
+    "name": "qwen3.6-plus"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(mkdir *)",
+      "Bash(echo *)",
+      "Bash(qwen *)",
+      "Bash(find *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(npm *)",
+      "Bash(brew *)",
+      "Bash(cat)",
+      "Bash(alias *)",
+      "Bash(})",
+      "Bash(eof)",
+      "Bash(grep *)",
+      "Bash(cursor *)",
+      "WebFetch(github.com)",
+      "Bash(dart *)",
+      "Read(//Users/regiskian/Git/work/flutter-drivewyze/**)",
+      "WebFetch(developer.apple.com)",
+      "Bash(curl *)",
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(.venv/bin/python *)",
+      "Bash(flutter *)",
+      "Bash(fvm *)",
+      "Read(//Users/regiskian/.claude/skills/**)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(rm *)",
+      "WebFetch(raw.githubusercontent.com)",
+      "Bash(git clone *)",
+      "Read(//tmp/youtube-enhancer-extension/src/features/openYouTubeSettingsOnHover/**)",
+      "Read(//tmp/youtube-enhancer-extension/src/features/timestampPeek/**)",
+      "Read(//tmp/youtube-enhancer-extension/src/pages/content/**)",
+      "Bash(who)",
+      "Bash(pkill *)",
+      "Bash(git reset *)",
+      "Bash(xargs *)",
+      "Read(//tmp/youtube-enhancer-extension/src/features/miniPlayer/**)",
+      "Read(//tmp/youtube-enhancer-extension/src/pages/embedded/**)",
+      "Read(//tmp/youtube-enhancer-extension/.github/ISSUE_TEMPLATE/**)",
+      "Read(//tmp/youtube-enhancer-extension/**)",
+      "Bash(pgrep *)",
+      "Bash(do *)",
+      "Bash(break)",
+      "Bash(done)",
+      "Bash(then *)",
+      "Bash(exit *)",
+      "Bash(fi)",
+      "WebFetch(www.google.com)",
+      "WebFetch(www.multion.ai)",
+      "WebFetch(www.adept.ai)",
+      "WebFetch(www.hyperwriteai.com)",
+      "WebFetch(www.anthropic.com)",
+      "WebFetch(docs.anthropic.com)",
+      "WebFetch(openai.com)",
+      "Read(//Users/regiskian/.claude/**)",
+      "Read(//Users/regiskian/.agents/skills/**)",
+      "Bash(opencode *)",
+      "Read(//opt/homebrew/lib/node_modules/@gitlawb/openclaude/bin/**)",
+      "Bash(openclaude *)",
+      "Bash(node *)",
+      "Bash(realpath *)",
+      "Bash(file *)",
+      "Bash(ln *)",
+      "Bash(timeout *)",
+      "Bash(sed *)",
+      "Bash(source *)",
+      "Read(//Users/regiskian/**)",
+      "Bash(tmutil *)",
+      "Bash(test *)",
+      "Bash(bash *)",
+      "Bash(git log *)",
+      "Bash(mdfind *)",
+      "Bash(lsof)",
+      "Bash(fsevent_dump)",
+      "Bash(sudo *)",
+      "Bash(bun *)",
+      "Bash(true)"
+    ]
+  },
+  "experimentalHooks": true,
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Session Start\" with title \"Qwen Code\"' && afplay /System/Library/Sounds/Submarine.aiff"
+          }
+        ]
+      }
+    ],
+    "AfterAgent": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Task completed!\" with title \"Qwen Code\"' && afplay /System/Library/Sounds/Hero.aiff"
+          }
+        ]
+      }
+    ],
+    "AfterTool": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Task completed!\" with title \"Qwen Code\"' && afplay /System/Library/Sounds/Hero.aiff"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Need something\" with title \"Qwen Code\"' && afplay /System/Library/Sounds/Glass.aiff"
+          }
+        ]
+      }
+    ]
+  },
+  "hooksConfig": {
+    "enabled": true
+  },
+  "mcpServers": {
+    "mempalace": {
+      "command": "/Users/regiskian/.agent-stack/mempalace-venv/bin/python",
+      "args": [
+        "-m",
+        "mempalace.mcp_server"
+      ]
+    },
+    "openspace": {
+      "command": "/Users/regiskian/.agent-stack/venv/bin/openspace-mcp",
+      "env": {
+        "OPENSPACE_HOST_SKILL_DIRS": "/Users/regiskian/.claude/skills",
+        "OPENSPACE_WORKSPACE": "/Users/regiskian/.agent-stack/src/OpenSpace"
+      }
+    }
+  }
+}
