@@ -1,0 +1,6 @@
+black 26.1.0
+django-upgrade 1.30.0
+isort 8.0.1
+litellm 1.82.1
+pyupgrade 3.21.2
+toonify 1.5.1

@@ -1,0 +1,7 @@
+# ~/.agent-stack/src/ repos — cloned on fresh install
+# Format: <dir-name> <git-url>
+# install_agents clones these into ~/.agent-stack/src/
+
+caveman    https://github.com/JuliusBrussee/caveman.git
+OpenSpace  https://github.com/HKUDS/OpenSpace.git
+scratchpad https://github.com/para-droid-ai/scratchpad.git
