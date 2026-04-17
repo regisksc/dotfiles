@@ -41,14 +41,25 @@ $EDITOR .env.local
 
 ## Day-to-day: keeping the repo current
 
-Run this whenever you install something new or change AI config:
+Whenever you install something new or change AI config, run:
 
 ```bash
-./install.sh backup   # capture packages + AI config from machine → repo
-./install.sh sync     # backup + secret scan (safe to run before committing)
+./sync.sh
 ```
 
-Then commit and push.
+This will:
+1. Backup current machine state (packages, AI configs, shell)
+2. Scan for leaked secrets
+3. Show what changed and prompt to commit + push
+
+Or manually:
+```bash
+./install.sh backup   # capture state from machine → repo
+./install.sh sync     # backup + secret scan (safe before committing)
+git diff              # review changes
+git add -A && git commit -m "backup: ..."
+git push
+```
 
 ---
 
@@ -151,6 +162,7 @@ See `templates/.env.example` for the full list of variables.
 
 ```
 install.sh                 Orchestrator — sources all category installers
+sync.sh                    Convenience wrapper: backup + scan + commit + push
 lib/                       Shared shell modules
   logging.sh               Dual log: human-readable + JSONL action log
   os.sh                    OS/package-manager detection
@@ -206,7 +218,6 @@ state/                     Runtime state (gitignored)
 
 logs/                      Human-readable run logs (gitignored)
 backups/                   Timestamped file snapshots (gitignored)
-PROGRESS.md                LLM handoff log — read this first if taking over
 ```
 
 ---
@@ -223,17 +234,6 @@ Every action is recorded in `state/actions.jsonl` with a rollback hint.
 
 Package installs cannot be automatically reversed — the `hint` field in each
 JSONL entry names the exact uninstall command.
-
----
-
-## LLM handoff
-
-If an LLM is taking over this session:
-
-1. Read `PROGRESS.md` — current phase, last step, next step
-2. Read `state/progress.jsonl` — machine-readable phase markers
-3. Read `state/actions.jsonl` — every action taken, with rollback hints
-4. Run `./install.sh doctor` — validate current state before doing anything
 
 ---
 
